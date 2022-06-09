@@ -1,0 +1,23 @@
+import java.awt.Robot;
+
+public class Imsi {
+
+	
+	public void test() {
+		try {
+			
+			Robot bot =  new Robot();	
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+
+}

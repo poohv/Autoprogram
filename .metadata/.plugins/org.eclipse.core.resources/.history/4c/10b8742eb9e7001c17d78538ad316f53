@@ -1,0 +1,86 @@
+import java.awt.Robot;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.io.FileInputStream;
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.awt.*; 
+
+public class Imsi {
+
+	
+	public static void test() {
+		try {
+			
+			Robot bot =  new Robot();
+			
+			/*
+			 * bot.mouseMove(1466,222); bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);//
+			 * 왼쪽누르기 bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);// 떄기
+			 * 
+			 * bot.keyPress( KeyEvent.VK_CONTROL ); bot.keyPress( KeyEvent.VK_A );
+			 * bot.keyRelease(KeyEvent.VK_CONTROL); bot.keyRelease( KeyEvent.VK_A );
+			 * 
+			 * 
+			 * bot.keyPress( KeyEvent.VK_CONTROL ); bot.keyPress( KeyEvent.VK_C );
+			 * bot.keyRelease( KeyEvent.VK_CONTROL ); bot.keyRelease( KeyEvent.VK_C );
+			 * 
+			 * 
+			 * //현재 갯수값 가져오기 Clipboard clipboard =
+			 * Toolkit.getDefaultToolkit().getSystemClipboard(); Transferable contents =
+			 * clipboard.getContents(clipboard); String current = (String)
+			 * contents.getTransferData(DataFlavor.stringFlavor);
+			 */
+			
+			//엑셀 데이터 값 가져오기
+			String path = Imsi.class.getResource("").getPath();
+			System.out.println(path);
+			
+			FileInputStream file = new FileInputStream("C:/Users/user/Downloads/avata_macro/Rpa_macro/bin/rotto.xlsx");
+			XSSFWorkbook workbook = new XSSFWorkbook(file);
+			XSSFSheet sheet = workbook.getSheetAt(0);
+			
+			XSSFRow row = sheet.getRow(3);
+			XSSFCell cell = row.getCell(0);
+			
+			/* System.out.println(current); */
+			System.out.println(cell.getStringCellValue());
+			
+			
+			
+		
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+	
+	
+	
+	
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		while (true) {
+			Thread.sleep(5000);
+			test();
+		}
+		
+	
+		
+	}
+	
+	
+	
+
+}

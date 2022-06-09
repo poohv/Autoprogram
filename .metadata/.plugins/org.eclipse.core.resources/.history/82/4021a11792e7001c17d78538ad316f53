@@ -1,0 +1,18 @@
+import java.awt.Robot;
+
+public class Imsi {
+
+	
+	try {
+		
+	}catch{
+		
+	}
+	
+	Robot bot =  new Robot();
+	
+	
+	
+	
+
+}

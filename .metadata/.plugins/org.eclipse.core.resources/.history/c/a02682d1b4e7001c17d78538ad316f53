@@ -1,0 +1,66 @@
+import java.awt.Robot;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.*; 
+
+public class Imsi {
+
+	
+	public static void test() {
+		try {
+			
+			Robot bot =  new Robot();
+			
+			bot.mouseMove(1466,222);
+			bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);// 왼쪽누르기
+			bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);// 떄기
+			
+			bot.keyPress( KeyEvent.VK_CONTROL );
+			bot.keyPress( KeyEvent.VK_A );
+			bot.keyRelease(KeyEvent.VK_CONTROL);
+			bot.keyRelease( KeyEvent.VK_A );
+			
+		
+			bot.keyPress( KeyEvent.VK_CONTROL );
+			bot.keyPress( KeyEvent.VK_C );
+			bot.keyRelease( KeyEvent.VK_CONTROL );
+			bot.keyRelease( KeyEvent.VK_C );
+			
+			
+			
+			Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+			Transferable contents = clipboard.getContents(clipboard);
+			int current = (int) contents.getTransferData(DataFlavor.stringFlavor);
+			
+			System.out.println(current);
+			
+			
+			
+		
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+	
+	
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		while (true) {
+			Thread.sleep(5000);
+			test();
+		}
+		
+	
+		
+	}
+	
+	
+	
+
+}

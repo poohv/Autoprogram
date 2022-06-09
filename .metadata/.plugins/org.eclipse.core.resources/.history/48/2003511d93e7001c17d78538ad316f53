@@ -1,0 +1,39 @@
+import java.awt.Robot;
+import java.awt.*; 
+
+public class Imsi {
+
+	
+	public void test() {
+		try {
+			
+			Robot bot =  new Robot();
+			
+			bot.mouseMove(0, 0);
+			
+		
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+        PointerInfo pt = MouseInfo.getPointerInfo();
+        while(true) {
+               pt = MouseInfo.getPointerInfo();
+               
+               System.out.println(pt.getLocation()); // x,y 
+               System.out.println(pt.getLocation().x);// x ÁÂÇ¥
+               System.out.println(pt.getLocation().y); // y ÁÂÇ¥
+        }
+  }
+	
+	
+	
+	
+
+}

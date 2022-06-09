@@ -1,0 +1,53 @@
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.*; 
+
+public class Imsi {
+
+	
+	public static void test() {
+		try {
+			
+			Robot bot =  new Robot();
+			
+			bot.mouseMove(1466,222);
+			bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);// 왼쪽누르기
+			bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);// 떄기
+			
+			bot.keyPress( KeyEvent.VK_CONTROL );
+			bot.keyPress( KeyEvent.VK_A );
+			bot.delay(1000);
+			bot.keyPress( KeyEvent.VK_CONTROL );
+			bot.keyPress( KeyEvent.VK_C );
+			bot.delay(1000);
+			bot.keyPress(KeyEvent.VK_RIGHT);
+			bot.keyPress( KeyEvent.VK_ENTER );
+			bot.delay(1000);
+			bot.keyPress( KeyEvent.VK_CONTROL );
+			bot.keyPress( KeyEvent.VK_V );
+		
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+	
+	
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		while (true) {
+			Thread.sleep(5000);
+			test();
+		}
+		
+	
+		
+	}
+	
+	
+	
+
+}
